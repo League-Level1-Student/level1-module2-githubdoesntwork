@@ -25,7 +25,7 @@ This is because there is no Minion class in the package.
   			private String color; 
   			private String master;
 
- 3.
+ 3
   Next, create a constructor, and getters and setters for all the member variables of the Minion class. 
   If they’re done right, all these tests will pass.
   
