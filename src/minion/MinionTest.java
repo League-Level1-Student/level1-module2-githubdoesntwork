@@ -34,7 +34,17 @@ This is because there is no Minion class in the package.
  */
 
 public class MinionTest {
-
+	private String name; 
+		private int eyes; 
+		private String color; 
+		private String master;
+	public MinionTest(String a, int b, String c, String d) {
+		name=a;
+		eyes=b;
+		color=c;
+		master=d;
+	}
+	
 	@Test
 	public void testConstructor() {
 		Minion stuart = new Minion("Stuart", 1, "yellow", "");
