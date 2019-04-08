@@ -16,8 +16,22 @@ public class Adventure {
 		for (int i = 1; i > 0;) {
 			if(health<1) {
 				System.out.println("You died. (ಥʖ̯ಥ)");
+				System.out.println("Your fame was "+fame+".");
+				if (fame<10) {
+					System.out.println("You were not remembered. No one came to attend your funeral.");
+					System.out.println("Actually, you didn't have a funeral.");
+				}else if(fame<30&&fame>9) {
+					System.out.println("A black cat stood on your grave.");
+					System.out.println("No one ever visited your tombstone because rumor said it would mean bad luck.");
+				}else if(fame<100&&fame>29) {
+					System.out.println("You had a funeral and people came now and then to respect you.");
+				}else if(fame<300&&fame>99) {
+					System.out.println("You had a well attended burial and many visited you often.");
+				}else if(fame>299) {
+					System.out.println("Your legacy will forever echo in time. Hundreds of thousands");
+					System.out.println("of people come monthly to see your tombstone.");
+				}
 				System.exit(0);
-				break;
 			}
 												System.out.println("---------------------------------");
 												System.out.println("Your health is " + health + ".");
@@ -31,6 +45,7 @@ public class Adventure {
 												System.out.println("2. Sneak past him");
 												System.out.println("3. Attack him");
 												System.out.println("4. See inventory");
+												System.out.println("5. Bribe him");
 												System.out.println("---------------------------------");
 			answer = scan.nextLine();
 			if (answer.contentEquals("1")) {
@@ -54,6 +69,21 @@ public class Adventure {
 												System.out.println("Ow. You health is now " + health + ". (ಥʖ̯ಥ)");
 												if(health<1) {
 													System.out.println("You died. (ಥʖ̯ಥ)");
+													System.out.println("Your fame was "+fame+".");
+													if (fame<10) {
+														System.out.println("You were not remembered. No one came to attend your funeral.");
+														System.out.println("Actually, you didn't have a funeral.");
+													}else if(fame<30&&fame>9) {
+														System.out.println("A black cat stood on your grave.");
+														System.out.println("No one ever visited your tombstone because rumor said it would mean bad luck.");
+													}else if(fame<100&&fame>29) {
+														System.out.println("You had a funeral and people came now and then to respect you.");
+													}else if(fame<300&&fame>99) {
+														System.out.println("You had a well attended burial and many visited you often.");
+													}else if(fame>299) {
+														System.out.println("Your legacy will forever echo in time. Hundreds of thousands");
+														System.out.println("of people come monthly to see your tombstone.");
+													}
 													System.exit(0);
 												}
 					}
@@ -78,6 +108,21 @@ public class Adventure {
 												System.out.println("Ow. Your health is now "+health+". (ಥʖ̯ಥ)");
 												if(health<1) {
 													System.out.println("You died. (ಥʖ̯ಥ)");
+													System.out.println("Your fame was "+fame+".");
+													if (fame<10) {
+														System.out.println("You were not remembered. No one came to attend your funeral.");
+														System.out.println("Actually, you didn't have a funeral.");
+													}else if(fame<30&&fame>9) {
+														System.out.println("A black cat stood on your grave.");
+														System.out.println("No one ever visited your tombstone because rumor said it would mean bad luck.");
+													}else if(fame<100&&fame>29) {
+														System.out.println("You had a funeral and people came now and then to respect you.");
+													}else if(fame<300&&fame>99) {
+														System.out.println("You had a well attended burial and many visited you often.");
+													}else if(fame>299) {
+														System.out.println("Your legacy will forever echo in time. Hundreds of thousands");
+														System.out.println("of people come monthly to see your tombstone.");
+													}
 													System.exit(0);
 												}
 												System.out.println();
@@ -101,6 +146,21 @@ public class Adventure {
 						}	
 						if(health<1) {
 							System.out.println("You died. (ಥʖ̯ಥ)");
+							System.out.println("Your fame was "+fame+".");
+							if (fame<10) {
+								System.out.println("You were not remembered. No one came to attend your funeral.");
+								System.out.println("Actually, you didn't have a funeral.");
+							}else if(fame<30&&fame>9) {
+								System.out.println("A black cat stood on your grave.");
+								System.out.println("No one ever visited your tombstone because rumor said it would mean bad luck.");
+							}else if(fame<100&&fame>29) {
+								System.out.println("You had a funeral and people came now and then to respect you.");
+							}else if(fame<300&&fame>99) {
+								System.out.println("You had a well attended burial and many visited you often.");
+							}else if(fame>299) {
+								System.out.println("Your legacy will forever echo in time. Hundreds of thousands");
+								System.out.println("of people come monthly to see your tombstone.");
+							}
 							System.exit(0);
 						}
 						
@@ -125,6 +185,21 @@ public class Adventure {
 			}
 			if(health<1) {
 				System.out.println("You died. (ಥʖ̯ಥ)");
+				System.out.println("Your fame was "+fame+".");
+				if (fame<10) {
+					System.out.println("You were not remembered. No one came to attend your funeral.");
+					System.out.println("Actually, you didn't have a funeral.");
+				}else if(fame<30&&fame>9) {
+					System.out.println("A black cat stood on your grave.");
+					System.out.println("No one ever visited your tombstone because rumor said it would mean bad luck.");
+				}else if(fame<100&&fame>29) {
+					System.out.println("You had a funeral and people came now and then to respect you.");
+				}else if(fame<300&&fame>99) {
+					System.out.println("You had a well attended burial and many visited you often.");
+				}else if(fame>299) {
+					System.out.println("Your legacy will forever echo in time. Hundreds of thousands");
+					System.out.println("of people come monthly to see your tombstone.");
+				}
 				System.exit(0);
 			}
 			if (answer.contentEquals("4")) {
@@ -134,7 +209,20 @@ public class Adventure {
 				System.out.println("Fame: "+fame);
 				System.out.println("Weapon: "+weapon+" - Damage per hit: "+weaponDamage);
 			}
-		
+		if (answer.contentEquals("5")) {
+			System.out.println("---------------------------------");
+			enemyWeapon="sword";
+			System.out.println("As you started towards him, the guard pulled out his "+enemyWeapon+".");
+			System.out.println("Instead of pulling out a weapon to spar him with, you pulled out a wad of");
+			System.out.println("cash. $20 to be precise. Living off minimum wage, the guard eyes lit up.");
+			System.out.println();
+			System.out.println("You: If you let me through, this 20 can be yours.");
+			System.out.println("Guard: You may pass.");
+			System.out.println();
+			money=money-20;
+			System.out.println("You have $"+money+" left, but you are in the city now.");
+			break;
+		}
 	}
 }
 }
