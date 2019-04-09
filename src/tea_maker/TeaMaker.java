@@ -61,7 +61,7 @@ class Cup {
 		if (hotWater.isHot())
 			System.out.println("Making hot " + teabag.getFlavor() + " tea.");
 		else
-			System.out.println("Can't make tea with cold water! ");
+			System.out.println("Can't make tea with lukewarm water! ");
 	}
 
 }
