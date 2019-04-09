@@ -11,10 +11,16 @@ public class Adventure {
 	static String enemyWeapon;
 	static int fame =0;
 	static int money = 100;
+	static boolean haveJob=false;
+	static int intelligence = 20;
+	static int hoursLeft=12;
+	static int strength=3;
+	static String jobName="unemployed man.";
+	static boolean haveSword=false;
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		for (int i = 1; i > 0;) {
-			if(health<1) {
+			if(health<1) {																			//THIS IS AT THE GATE
 				System.out.println("You died. (ಥʖ̯ಥ)");
 				System.out.println("Your fame was "+fame+".");
 				if (fame<10) {
@@ -50,7 +56,7 @@ public class Adventure {
 			answer = scan.nextLine();
 			if (answer.contentEquals("1")) {
 				answer="0";
-			for (int j = 1; j > 0;) {
+			for (int j = 1; j > 0;) {																//TALK
 		
 												System.out.println("---------------------------------");
 												System.out.println("Your health is " + health + ".");
@@ -96,7 +102,7 @@ public class Adventure {
 			}
 			if (answer.contentEquals("2")) {
 				answer="0";
-				for (int j2 = 1; j2 > 0;) {
+				for (int j2 = 1; j2 > 0;) {																//TRYING TO SNEAK
 
 												System.out.println("---------------------------------");
 												System.out.println("You tried to sneak past the guard, but he sees you");
@@ -224,5 +230,72 @@ public class Adventure {
 			break;
 		}
 	}
+		for (int i = 1; i > 0;) {																//THIS IS WHEN YOU ARE IN THE CITY
+			System.out.println("---------------------------------");
+			if (hoursLeft>0) {
+			System.out.println("The city is quiet. There are "+hoursLeft+" hours left of the day.");
+			}else {
+				System.out.println("The city is quiet. It is time to go to sleep.");
+			}
+			System.out.println();
+			System.out.println("1. Find a job");
+			System.out.println("2. Work a job");
+			System.out.println("3. Library");
+			System.out.println("4. Shop");
+			System.out.println("5. Go to the king");
+			System.out.println("6. Work out");
+			System.out.println("---------------------------------");
+			if (answer.contentEquals("1")) {
+				for (int j = 1; j < 0;) {
+				System.out.println("---------------------------------");
+				System.out.println("There are a few jobs available");
+				System.out.println();
+				System.out.println("If you work the entire day. You can work 3 times a day, each time lasting 4 hours.");
+				System.out.println("Apply for:");
+				System.out.println("1. Plumber-$20 a day - req. 30 intelligence and 10 strength");
+				System.out.println("2. Electrician-$40 a day - req. 50 intelligence and 5 strength");
+				System.out.println("3. Guard-$10 a day - req. 20 strength and a sword");
+				System.out.println("4. Go back");
+
+				if (answer.contentEquals("1")) {
+					if (intelligence>29&&strength>9) {
+						System.out.println("---------------------------------"); 
+						System.out.println("You got the job and left the job as a "+jobName);
+						haveJob=true;
+						jobName="plumber";
+						System.out.println();
+					}else {
+						System.out.println("You didn't meet the job requirements.");
+					}
+					if (answer.contentEquals("2")) {
+						if (intelligence>49&&strength>4) {
+							System.out.println("---------------------------------");
+							System.out.println("You got the job and left the job as a "+jobName);
+							haveJob=true;
+							jobName="electrician";
+							System.out.println();
+						}else {
+							System.out.println("You didn't meet the job requirements.");
+						}
+						}
+					if (answer.contentEquals("3")) {
+						if (strength>19&&haveSword==true) {
+							System.out.println("---------------------------------");
+							System.out.println("You got the job and left the job as a "+jobName);
+							haveJob=true;
+							jobName="guard";
+							System.out.println();
+						}else {
+							System.out.println("You didn't meet the job requirements.");
+						}
+						}
+					if (answer.contentEquals("4")) {
+						break;
+						}
+				}
+					}
+				}
+			}
+		}
 }
-}
+
