@@ -19,6 +19,7 @@ public class Adventure {
 	static String jobName = "unemployed man.";
 	static boolean haveSword = false;
 	static int jobPay = 0;
+<<<<<<< HEAD
 	static int healthPotions = 0;
 	static int maxHealthPotions = 0;
 	static int maxHealth = 20;
@@ -26,6 +27,11 @@ public class Adventure {
 	static int randInt = rand.nextInt(10);
 	static int enemyHealth = 0;
 
+=======
+	static int healthPotions=0;
+	static int maxHealthPotions=0;
+	static int maxHealth=20;
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		for (int i = 1; i > 0;) {
@@ -258,7 +264,10 @@ public class Adventure {
 			System.out.println("6. Work out");
 			System.out.println("7. Go to sleep");
 			System.out.println("8. Inventory and stats");
+<<<<<<< HEAD
 			System.out.println("9. Go on a quest");
+=======
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 			System.out.println("---------------------------------");
 			answer = scan.nextLine();
 			if (answer.contentEquals("1")) {
@@ -266,8 +275,12 @@ public class Adventure {
 					System.out.println("---------------------------------");
 					System.out.println("There are a few jobs available");
 					System.out.println();
+<<<<<<< HEAD
 					System.out.println(
 							"(If you work the entire day) You can work 3 times a day, each time lasting 4 hours.");
+=======
+					System.out.println("(If you work the entire day) You can work 3 times a day, each time lasting 4 hours.");
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 					System.out.println("Apply for:");
 					System.out.println("1. Plumber-$30 a day - req. 30 intelligence and 10 strength");
 					System.out.println("2. Electrician-$45 a day - req. 50 intelligence and 5 strength");
@@ -317,7 +330,11 @@ public class Adventure {
 						}
 					}
 					if (answer.contentEquals("4")) {
+<<<<<<< HEAD
 						answer = "0";
+=======
+						answer="0";
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 						break;
 					}
 				}
@@ -503,6 +520,7 @@ public class Adventure {
 			}
 			if (answer.contentEquals("9")) {
 				System.out.println("---------------------------------");
+<<<<<<< HEAD
 				System.out.println("You went on a quest.");
 				System.out.println();
 				if (randInt == 0) {
@@ -537,9 +555,133 @@ break;
 						System.out.println("Camel HP: "+enemyHealth);
 						System.out.println();
 						enemyHealth = enemyHealth - weaponDamage;
+=======
+				System.out.println("You slept like a log.");
+				hoursLeft=12;
+				int healthChange=3;
+				health=health+healthChange;
+				if(health>maxHealth) {
+					int healthChangeChange=health-maxHealth;
+					health=maxHealth;
+					healthChange=healthChange-healthChangeChange;
+				}
+				System.out.println();
+				System.out.println("You wake up refreshed! You rehealed "+healthChange+" health.");
+			}else {
+				System.out.println("You aren't sleepy!");
+			}
+		}
+		if (answer.contentEquals("4")) {
+			for (int j = 1; j > 0;) {
+				System.out.println("---------------------------------");
+				System.out.println("You come in to the shop.");
+				System.out.println();
+				System.out.println("Shopkeeper: Hello! I have an unlimited stock");
+				System.out.println("of weapons, potions, and more. Feel free to buy as many as you want!");
+				System.out.println();
+				System.out.println("1. Reheal potions (regains 10 health) - $10 each");
+				System.out.println("2. Maximum health potions (gives 1 more max health) - $20 each");
+				System.out.println("3. Sword (5 damage per hit) - $20");
+				System.out.println("4. Go back");
+				answer=scan.nextLine();
+				if (answer.contentEquals("1")) {
+					if (money>9) {
+						System.out.println();
+						System.out.println("You bought a reheal potion!");
+						System.out.println();
+						healthPotions++;
+						money=money-10;
+					}else {
+						System.out.println();
+						System.out.println("You don't have enough money!");
+						System.out.println();
+					}
+				}
+				if (answer.contentEquals("2")) {
+					if (money>19) {
+						System.out.println();
+						System.out.println("You bought a maximum health potion!");
+						System.out.println();
+					maxHealthPotions++;
+					money=money-20;
+					}else {
+						System.out.println();
+						System.out.println("You don't have enough money!");
+						System.out.println();
+					}
+				}
+				if (answer.contentEquals("4")) {
+					break;
+				}
+				if (answer.contentEquals("3")) {
+					if (money>19&&haveSword==false) {
+						System.out.println();
+						System.out.println("You bought a sword!");
+						System.out.println();
+						haveSword=true;
+						weaponDamage=5;
+						weapon="sword";
+						money=money-20;
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 					}
 				}
 			}
 		}
+		if (answer.contentEquals("8")) {
+			for (int j = 1; j > 0;) {
+			System.out.println("---------------------------------");
+			System.out.println("HP: " + health);
+			System.out.println("Money: " + money);
+			System.out.println("Fame: " + fame);
+			System.out.println("Weapon: " + weapon + " - Damage per hit: " + weaponDamage);
+			System.out.println("Intelligence: "+intelligence);
+			System.out.println("Strength: "+strength);
+			System.out.println();
+			System.out.println("Usables:");
+			System.out.println("1. HP Potions: "+healthPotions);
+			System.out.println("2. Max Health Potions: "+maxHealthPotions);
+			System.out.println();
+			System.out.println("3. Go back");
+			System.out.println();
+			answer=scan.nextLine();
+			if (answer.contentEquals("1")) {
+				if (healthPotions>0) {
+					System.out.println("---------------------------------");
+					health=health+10;
+					if (health>maxHealth) {
+						health=maxHealth;
+					}
+					System.out.println("You used a health potion. It reheals 10 HP. ");
+					System.out.println("Your health is now "+health+".");
+					System.out.println();
+					healthPotions=healthPotions-1;
+				}else {
+					System.out.println();
+					System.out.println("You don't have any!");
+				}
+			}
+			if (answer.contentEquals("2")) {
+				if (maxHealthPotions>0) {
+					System.out.println("---------------------------------");
+					maxHealth=maxHealth+1;
+					System.out.println("You used a max health potion. It gives you 1 additional max HP. ");
+					System.out.println("Your max health is now "+maxHealth+".");
+					System.out.println();
+					maxHealthPotions=maxHealthPotions-1;
+				}else {
+					System.out.println();
+					System.out.println("You don't have any!");
+				}
+			}
+			if (answer.contentEquals("3")) {
+				break;
+			}
+			}
+		}
+		
 	}
+<<<<<<< HEAD
+=======
+}
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 }
