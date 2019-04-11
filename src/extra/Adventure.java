@@ -237,6 +237,7 @@ public class Adventure {
 			}
 		}
 		for (int i = 1; i > 0;) { // THIS IS WHEN YOU ARE IN THE CITY
+		for (int i = 1; i > 0;) { 												// THIS IS WHEN YOU ARE IN THE CITY
 			System.out.println("---------------------------------");
 			if (hoursLeft > 0) {
 				System.out.println("The city is quiet. There are " + hoursLeft + " hours left of the day.");
@@ -254,7 +255,7 @@ public class Adventure {
 			System.out.println("---------------------------------");
 			answer = scan.nextLine();
 			if (answer.contentEquals("1")) {
-				for (int j = 1; j > 0;) {
+				for (int j = 1; j > 0;) {												//JOBS
 					System.out.println("---------------------------------");
 					System.out.println("There are a few jobs available");
 					System.out.println();
