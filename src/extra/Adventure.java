@@ -19,13 +19,27 @@ public class Adventure {
 	static String jobName = "unemployed man.";
 	static boolean haveSword = false;
 	static int jobPay = 0;
+<<<<<<< HEAD
+	static int healthPotions = 0;
+	static int maxHealthPotions = 0;
+	static int maxHealth = 20;
+	static Random rand = new Random();
+	static int randInt = rand.nextInt(10);
+	static int enemyHealth = 0;
+
+=======
 	static int healthPotions=0;
 	static int maxHealthPotions=0;
 	static int maxHealth=20;
+<<<<<<< HEAD
 	static Random rand = new Random();
 	static int randInt = rand.nextInt(3);
 	static int enemyHealth = 0;
 	public static void main(String[] args) throws InterruptedException {
+=======
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
+	public static void main(String[] args) {
+>>>>>>> acfed887586bae8bc80fd065ff6c0a3dc008782c
 		Scanner scan = new Scanner(System.in);
 		for (int i = 1; i > 0;) {
 			if (health < 1) { // THIS IS AT THE GATE
@@ -65,7 +79,6 @@ public class Adventure {
 			if (answer.contentEquals("1")) {
 				answer = "0";
 				for (int j = 1; j > 0;) { // TALK
-
 					System.out.println("---------------------------------");
 					System.out.println("Your health is " + health + ".");
 					System.out.println();
@@ -258,7 +271,14 @@ public class Adventure {
 			System.out.println("6. Work out");
 			System.out.println("7. Go to sleep");
 			System.out.println("8. Inventory and stats");
+<<<<<<< HEAD
 			System.out.println("9. Go on a quest");
+=======
+<<<<<<< HEAD
+			System.out.println("9. Go on a quest");
+=======
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
+>>>>>>> acfed887586bae8bc80fd065ff6c0a3dc008782c
 			System.out.println("---------------------------------");
 			answer = scan.nextLine();
 			if (answer.contentEquals("1")) {
@@ -266,7 +286,12 @@ public class Adventure {
 					System.out.println("---------------------------------");
 					System.out.println("There are a few jobs available");
 					System.out.println();
+<<<<<<< HEAD
+					System.out.println(
+							"(If you work the entire day) You can work 3 times a day, each time lasting 4 hours.");
+=======
 					System.out.println("(If you work the entire day) You can work 3 times a day, each time lasting 4 hours.");
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 					System.out.println("Apply for:");
 					System.out.println("1. Plumber-$30 a day - req. 30 intelligence and 10 strength");
 					System.out.println("2. Electrician-$45 a day - req. 50 intelligence and 5 strength");
@@ -316,15 +341,38 @@ public class Adventure {
 						}
 					}
 					if (answer.contentEquals("4")) {
+<<<<<<< HEAD
+						answer = "0";
+=======
 						answer="0";
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 						break;
 					}
 				}
 			}
 			if (answer.contentEquals("2")) {
 				if (haveJob) {
-					if (hoursLeft>3) {
+					if (hoursLeft > 3) {
+						System.out.println("---------------------------------");
+						System.out.println("As a " + jobName + ", you receive " + jobPay + " dollars.");
+						System.out.println();
+						money = money + jobPay;
+						System.out.println("You have " + money + " dollars.");
+						hoursLeft = hoursLeft - 4;
+					} else {
+						System.out.println();
+						System.out.println("You don't have enough time!");
+						System.out.println();
+					}
+				} else {
+					System.out.println();
+					System.out.println("You don't have a job.");
+				}
+			}
+			if (answer.contentEquals("3")) {
+				if (hoursLeft > 1) {
 					System.out.println("---------------------------------");
+<<<<<<< HEAD
 					if (jobName.contentEquals("plumber")) {
 						System.out.print("Plunging mario's pipes");
 						Thread.sleep(1000);
@@ -341,55 +389,203 @@ public class Adventure {
 						System.out.println("\b");
 					}
 					System.out.println("As a " + jobName + ", you receive " + jobPay + " dollars.");
+=======
+					System.out.println("You go to the library.");
 					System.out.println();
-					money = money + jobPay;
-					System.out.println("You have " + money + " dollars.");
-					hoursLeft=hoursLeft-4;
+					System.out.println("You read a book about time travel. Your ");
+					System.out.println("intelligence rose by 2.");
+					intelligence = intelligence + 2;
+					hoursLeft = hoursLeft - 2;
+>>>>>>> acfed887586bae8bc80fd065ff6c0a3dc008782c
+					System.out.println();
 				} else {
-					System.out.println();
-					System.out.println("You don't have enough time!");
-					System.out.println();
-				}
-			}else {
-				System.out.println();
-				System.out.println("You don't have a job.");
-			}
-			}
-			if (answer.contentEquals("3")) {
-				if (hoursLeft>1) {
-				System.out.println("---------------------------------");
-				System.out.println("You go to the library.");
-				System.out.println();
-				System.out.println("You read a book about time travel. Your ");
-				System.out.println("intelligence rose by 2.");
-				intelligence=intelligence+2;
-				hoursLeft=hoursLeft-2;
-				System.out.println();
-				}else {
 					System.out.println();
 					System.out.println("You don't have enough time!");
 					System.out.println();
 				}
 			}
 			if (answer.contentEquals("6")) {
-				if (hoursLeft>1) {
-				System.out.println("---------------------------------");
-				System.out.println("You go to the gym.");
-				System.out.println();
-				System.out.println("You did a few crunches. Your ");
-				System.out.println("strength rose by 2.");
-				strength=strength+2;
-				hoursLeft=hoursLeft-2;
-				System.out.println();
-				}else {
+				if (hoursLeft > 1) {
+					System.out.println("---------------------------------");
+					System.out.println("You go to the gym.");
+					System.out.println();
+					System.out.println("You did a few crunches. Your ");
+					System.out.println("strength rose by 2.");
+					strength = strength + 2;
+					hoursLeft = hoursLeft - 2;
+					System.out.println();
+				} else {
 					System.out.println();
 					System.out.println("You don't have enough time!");
 					System.out.println();
 				}
 			}
-		if (answer.contentEquals("7")) {
-			if (hoursLeft<7) {
+			if (answer.contentEquals("7")) {
+				if (hoursLeft < 7) {
+					System.out.println("---------------------------------");
+					System.out.println("You slept like a log.");
+					hoursLeft = 12;
+					int healthChange = 3;
+					health = health + healthChange;
+					if (health > maxHealth) {
+						int healthChangeChange = health - maxHealth;
+						health = maxHealth;
+						healthChange = healthChange - healthChangeChange;
+					}
+					System.out.println();
+					System.out.println("You wake up refreshed! You rehealed " + healthChange + " health.");
+				} else {
+					System.out.println("You aren't sleepy!");
+				}
+			}
+			if (answer.contentEquals("4")) {
+				for (int j = 1; j > 0;) {
+					System.out.println("---------------------------------");
+					System.out.println("You come in to the shop.");
+					System.out.println();
+					System.out.println("Shopkeeper: Hello! I have an unlimited stock");
+					System.out.println("of weapons, potions, and more. Feel free to buy as many as you want!");
+					System.out.println();
+					System.out.println("1. Reheal potions (regains 10 health) - $10 each");
+					System.out.println("2. Maximum health potions (gives 1 more max health) - $20 each");
+					System.out.println("3. Sword (5 damage per hit) - $20");
+					System.out.println("4. Go back");
+					answer = scan.nextLine();
+					if (answer.contentEquals("1")) {
+						if (money > 9) {
+							System.out.println();
+							System.out.println("You bought a reheal potion!");
+							System.out.println();
+							healthPotions++;
+							money = money - 10;
+						} else {
+							System.out.println();
+							System.out.println("You don't have enough money!");
+							System.out.println();
+						}
+					}
+					if (answer.contentEquals("2")) {
+						if (money > 19) {
+							System.out.println();
+							System.out.println("You bought a maximum health potion!");
+							System.out.println();
+							maxHealthPotions++;
+							money = money - 20;
+						} else {
+							System.out.println();
+							System.out.println("You don't have enough money!");
+							System.out.println();
+						}
+					}
+					if (answer.contentEquals("4")) {
+						break;
+					}
+					if (answer.contentEquals("3")) {
+						if (money > 19 && haveSword == false) {
+							System.out.println();
+							System.out.println("You bought a sword!");
+							System.out.println();
+							haveSword = true;
+							weaponDamage = 5;
+							weapon = "sword";
+							money = money - 20;
+						} else {
+							System.out.println();
+							System.out.println("You already have one!");
+							System.out.println();
+						}
+					}
+				}
+			}
+			if (answer.contentEquals("8")) {
+				for (int j = 1; j > 0;) {
+					System.out.println("---------------------------------");
+					System.out.println("HP: " + health);
+					System.out.println("Money: " + money);
+					System.out.println("Fame: " + fame);
+					System.out.println("Weapon: " + weapon + " - Damage per hit: " + weaponDamage);
+					System.out.println("Intelligence: " + intelligence);
+					System.out.println("Strength: " + strength);
+					System.out.println();
+					System.out.println("Usables:");
+					System.out.println("1. HP Potions: " + healthPotions);
+					System.out.println("2. Max Health Potions: " + maxHealthPotions);
+					System.out.println();
+					System.out.println("3. Go back");
+					System.out.println();
+					answer = scan.nextLine();
+					if (answer.contentEquals("1")) {
+						if (healthPotions > 0) {
+							System.out.println("---------------------------------");
+							health = health + 10;
+							if (health > maxHealth) {
+								health = maxHealth;
+							}
+							System.out.println("You used a health potion. It reheals 10 HP. ");
+							System.out.println("Your health is now " + health + ".");
+							System.out.println();
+							healthPotions = healthPotions - 1;
+						} else {
+							System.out.println();
+							System.out.println("You don't have any!");
+						}
+					}
+					if (answer.contentEquals("2")) {
+						if (maxHealthPotions > 0) {
+							System.out.println("---------------------------------");
+							maxHealth = maxHealth + 1;
+							System.out.println("You used a max health potion. It gives you 1 additional max HP. ");
+							System.out.println("Your max health is now " + maxHealth + ".");
+							System.out.println();
+							maxHealthPotions = maxHealthPotions - 1;
+						} else {
+							System.out.println();
+							System.out.println("You don't have any!");
+						}
+					}
+					if (answer.contentEquals("3")) {
+						break;
+					}
+				}
+			}
+			if (answer.contentEquals("9")) {
 				System.out.println("---------------------------------");
+<<<<<<< HEAD
+				System.out.println("You went on a quest.");
+				System.out.println();
+				if (randInt == 0) {
+					System.out.println("You decided to follow the wind.");
+					System.out.println("You soon arrived at a desert.");
+					System.out.println();
+					enemyHealth = 10;
+					System.out.println("A camel fiercely defends a small patch of grass.");
+					System.out.println("The camel strikes first.");
+					for (int j = 1; j > 0;) {
+						if (enemyHealth < 1) {
+System.out.println();
+System.out.println("You won! You get 2 fame and $10.");
+System.out.println();
+break;
+						}
+						System.out.println("The camel deals 5 damage!");
+						System.out.println();
+						health = health - 5;
+						System.out.println("Your HP: " + health);
+						System.out.println("Camel HP: "+enemyHealth);
+						if (health < 1) {
+							System.out.println();
+							System.out.println("You died. (ಥʖ̯ಥ)");
+							System.out.println("You didn't keep your loot.");
+							System.out.println();
+							break;
+						}
+						System.out.println("You attack the camel, dealing " + weaponDamage + " damage with your " + weapon + ".");
+						System.out.println();
+						System.out.println("Your HP: " + health);
+						System.out.println("Camel HP: "+enemyHealth);
+						System.out.println();
+						enemyHealth = enemyHealth - weaponDamage;
+=======
 				System.out.println("You slept like a log.");
 				hoursLeft=12;
 				int healthChange=3;
@@ -456,6 +652,7 @@ public class Adventure {
 						weaponDamage=5;
 						weapon="sword";
 						money=money-20;
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 					}
 				}
 			}
@@ -593,6 +790,13 @@ break;
 			}
 		}
 	}
+<<<<<<< HEAD
+=======
+}
+<<<<<<< HEAD
 }
 }
+=======
+>>>>>>> 1c2a75a8a6666e17f592655c3f3477ddc3216aa5
 }
+>>>>>>> acfed887586bae8bc80fd065ff6c0a3dc008782c
