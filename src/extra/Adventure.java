@@ -24,6 +24,7 @@ public class Adventure {
 	static Random rand = new Random();
 	static int randInt = rand.nextInt(3);
 	static int enemyHealth = 0;
+	static int jobPay=0;
 	public static void main(String[] args) throws InterruptedException {
 
 
@@ -571,7 +572,7 @@ break;
 					}
 					break;
 				}
-				for (int j2 = 1; j2 <0;) {
+
 					System.out.println("---------------------------------");
 					System.out.println("You have 4 options:");
 					System.out.println();
@@ -594,7 +595,9 @@ break;
 						System.out.println();
 						System.out.println();
 					}
-				}
 			}
 		}
 	}
+		}
+	}
+}

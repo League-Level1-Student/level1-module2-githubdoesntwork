@@ -34,7 +34,7 @@ public void keyTyped(KeyEvent e) {
 @Override
 public void keyPressed(KeyEvent e) {
 	// TODO Auto-generated method stub
-	char ch = e.getKeyChar();
+	int ch = e.getKeyCode();
 	if (ch == KeyEvent.VK_W) {
         System.out.println("yeet");
     }
