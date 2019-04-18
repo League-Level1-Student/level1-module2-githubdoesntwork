@@ -25,8 +25,8 @@ public class Adventure {
 	static int randInt = rand.nextInt(3);
 	static int enemyHealth = 0;
 	static int jobPay=0;
+	public static void main(String[] args) throws InterruptedException {
 
-	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
 		for (int i = 1; i > 0;) {
@@ -317,7 +317,7 @@ public class Adventure {
 						}
 					}
 					if (answer.contentEquals("4")) {
-						answer = "0";
+						answer="0";
 						break;
 					}
 				}
@@ -572,7 +572,7 @@ break;
 					}
 					break;
 				}
-				for (int j2 = 1; j2 <0;) {
+
 					System.out.println("---------------------------------");
 					System.out.println("You have 4 options:");
 					System.out.println();
@@ -595,10 +595,9 @@ break;
 						System.out.println();
 						System.out.println();
 					}
-				}
 			}
 		}
 	}
+		}
 	}
-
 }
