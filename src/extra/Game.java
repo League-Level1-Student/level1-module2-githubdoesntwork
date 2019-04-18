@@ -1,7 +1,11 @@
+
+//ep 9
+
 package extra;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 public class Game implements Runnable {
 
@@ -14,6 +18,8 @@ public class Game implements Runnable {
 	
 	private BufferStrategy bs;
 	private Graphics g;
+	//states 
+private State gameState;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -23,10 +29,15 @@ public class Game implements Runnable {
 	
 	private void init(){
 		display = new Display(title, width, height);
+		Assets.init();
+		gameState = new GameState();
+		State.setState(gameState);
 	}
 	
 	private void tick(){
-		
+		if (State.getState() !=null) {
+			State.getState().tick();
+		}
 	}
 	
 	private void render(){
@@ -40,10 +51,9 @@ public class Game implements Runnable {
 		g.clearRect(0, 0, width, height);
 		//Draw Here!
 		
-		g.setColor(Color.red);
-		g.fillRect(10, 50, 50, 70);
-		g.setColor(Color.green);
-		g.fillRect(0, 0, 10, 10);
+		if (State.getState() !=null) {
+			State.getState().render(g);
+		}
 		
 		//End Drawing!
 		bs.show();
