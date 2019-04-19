@@ -19,6 +19,7 @@ public class GameState extends State{
 	@Override
 	public void render(Graphics g) {
 		player.render(g);
+		Tile.tiles[2].render(g, 0, 0);
 	}
 
 }
